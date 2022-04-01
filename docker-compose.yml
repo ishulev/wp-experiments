@@ -19,6 +19,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
       - ./mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./plugins:/var/www/html/wp-content/plugins
     ports:
       - "8000:80"
     restart: always
