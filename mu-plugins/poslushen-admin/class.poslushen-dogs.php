@@ -67,7 +67,6 @@ class Poslushen_Dogs
             'supports'           => array('title', 'author', 'thumbnail', 'excerpt', 'comments'),
         );
 
-        echo "Testtiing2";
         register_post_type('Dog', $args);
     }
 }
