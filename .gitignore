@@ -22,5 +22,5 @@ node_modules/
 *.sql
 *.sqlite
 
-shared
+shared/*
 !shared/mu-plugins/
