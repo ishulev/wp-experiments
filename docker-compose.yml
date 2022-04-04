@@ -2,9 +2,10 @@ version: "3.9"
     
 services:
   db:
-    image: mysql:5.7
+    image: mariadb:10.3.34
     volumes:
       - db_data:/var/lib/mysql
+      - ./shared/db:/docker-entrypoint-initdb.d
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: somewordpress
@@ -18,8 +19,8 @@ services:
     image: wordpress:latest
     volumes:
       - wordpress_data:/var/www/html
-      - ./mu-plugins:/var/www/html/wp-content/mu-plugins
-      - ./plugins:/var/www/html/wp-content/plugins
+      - ./shared/mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./shared/plugins:/var/www/html/wp-content/plugins
     ports:
       - "8000:80"
     restart: always
