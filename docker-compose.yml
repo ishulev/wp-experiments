@@ -21,6 +21,8 @@ services:
       - wordpress_data:/var/www/html
       - ./shared/mu-plugins:/var/www/html/wp-content/mu-plugins
       - ./shared/plugins:/var/www/html/wp-content/plugins
+      - ./shared/themes:/var/www/html/wp-content/themes
+      - ./shared/public_html/wp-content/uploads:/var/www/html/wp-content/uploads
     ports:
       - "8000:80"
     restart: always
@@ -29,6 +31,9 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_TABLE_PREFIX: wpgc_
+      WORDPRESS_DB_CHARSET: utf8mb4
+      WORDPRESS_DB_COLLATE: utf8mb4_unicode_ci
 volumes:
   db_data: {}
   wordpress_data: {}
