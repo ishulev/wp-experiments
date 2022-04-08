@@ -34,6 +34,7 @@ services:
       WORDPRESS_TABLE_PREFIX: wpgc_
       WORDPRESS_DB_CHARSET: utf8mb4
       WORDPRESS_DB_COLLATE: utf8mb4_unicode_ci
+      CUSTOM_DB_NAME: neposlus_posen
 volumes:
   db_data: {}
   wordpress_data: {}
