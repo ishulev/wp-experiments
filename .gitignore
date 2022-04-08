@@ -24,3 +24,5 @@ node_modules/
 
 shared/*
 !shared/mu-plugins/
+
+.DS_Store
